@@ -4,11 +4,11 @@ function cm = red2blue(n)
 %   RED2BLUE(M) is a diverging red-to-blue colormap.
 %   Source: colorbrewer2.org 
 % 
-% 
+%
 
 % by Carlos Moffat (carlos.moffat@ucsc.edu)
 % Created on:   2015-07-09 21:10:26
-% Last Modified: 2015-07-10 09:27:43
+% Last Modified: 2015-07-10 09:42:43
 
 if nargin == 0
     n = 64;

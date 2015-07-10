@@ -1,8 +1,14 @@
 function cm = yl2green(n)
+%YL2GREEN A Yellow to Greens Colormap from ColorBrewer
+%
+%   YL2GREEN(M) is a sequential yellow-to-green colormap.
+%   Source: colorbrewer2.org 
+% 
+%
 
 % by Carlos Moffat (carlos.moffat@ucsc.edu)
 % Created on:   2015-07-09 21:10:26
-% Last Modified: 2015-07-09 21:38:49
+% Last Modified: 2015-07-10 09:44:17
 
 if nargin == 0
     n = 64;
