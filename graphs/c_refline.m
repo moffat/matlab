@@ -1,11 +1,14 @@
 function h=c_refline(v,s,ax)
 % C_REFLINE plots a reference line 
-% h=c_refline(v,s,ax) plots a line at value v (0 is default)
-% with properties s (default is 'k') and on axes 'ax' (default is 'x')
+%   h = C_REFLINE(v,s,ax) plots a line at value v (0 is default)
+%   with properties s (default is 'k') and on axes 'ax' (default is 'x')
 %
-% h is a handle to the line
+%   h is a handle to the line
 
-% Carlos Moffat, 2007
+% by Carlos Moffat (carlos.moffat@ucsc.edu)
+% Created on:   2097-03-21 21:00:16
+% Last Modified: 2015-07-10 09:54:45
+
 
 hold on
 if nargin==0
