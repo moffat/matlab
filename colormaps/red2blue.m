@@ -8,7 +8,7 @@ function cm = red2blue(n)
 
 % by Carlos Moffat (carlos.moffat@ucsc.edu)
 % Created on:   2015-07-09 21:10:26
-% Last Modified: 2015-07-10 09:42:43
+% Last Modified: 2015-07-20 14:46:26
 
 if nargin == 0
     n = 64;
@@ -27,7 +27,6 @@ rgb = [103   0  31; ...
          5  48  97]./255;
 
 nn = numel(rgb(:))/3;
-nn = ((1:nn)./nn)';
-n = (1:n)./n;
-
+nn = linspace(0,1,nn);
+n  = linspace(0,1,n) ;
 cm = interp1(nn,rgb,n);

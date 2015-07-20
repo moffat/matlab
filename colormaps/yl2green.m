@@ -8,7 +8,7 @@ function cm = yl2green(n)
 
 % by Carlos Moffat (carlos.moffat@ucsc.edu)
 % Created on:   2015-07-09 21:10:26
-% Last Modified: 2015-07-10 09:44:17
+% Last Modified: 2015-07-20 14:46:01
 
 if nargin == 0
     n = 64;
@@ -25,8 +25,7 @@ rgb = [255 255 229;...
          0  69  41]./255;
 
 
-nn = numel(rgb(:))/3-1;
-nn = ((0:nn)./nn)';
-
-n = ((0:n-1))./(n-1);
+nn = numel(rgb(:))/3;
+nn = linspace(0,1,nn);
+n  = linspace(0,1,n) ;
 cm = interp1(nn,rgb,n);
