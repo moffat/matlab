@@ -1,4 +1,4 @@
-function C = viridis(N)
+function C = viridis(N,Reverse)
 %VIRIDIS Blue-green-yellow colour map
 %   VIRIDIS(N) returns an N-by-3 matrix containing a colormap. 
 %   The colors begin with dark purplish-blue and blue, range
@@ -7,6 +7,7 @@ function C = viridis(N)
 %   VIRIDIS is the new default colormap for matplotlib
 %  
 % Created by Ed Hawkins (@ed_hawkins) and Kevin Anchukaitis
+% E.S. Added the ability to reverse color map
 
 viridi = [
 0.26700401  0.00487433  0.32941519
@@ -267,10 +268,18 @@ viridi = [
 0.99324789  0.90615657  0.1439362];
 
 P = size(viridi,1);
-
-if nargin < 1
-   N = P;
+switch true
+    case nargin < 1
+        Reverse = false;
+        N = P;
+    case nargin < 2
+        Reverse = false;
 end
+
 
 N = min(N,P);
 C = interp1(1:P, viridi, linspace(1,P,N), 'linear');
+if Reverse
+    C = flip(C);
+end
+
