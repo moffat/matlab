@@ -1,4 +1,4 @@
-function cm = yl2green(n)
+function cm = yl2green(n,Reverse)
 %YL2GREEN A Yellow to Greens Colormap from ColorBrewer
 %
 %   YL2GREEN(M) is a sequential yellow-to-green colormap.
@@ -9,9 +9,15 @@ function cm = yl2green(n)
 % by Carlos Moffat (carlos.moffat@ucsc.edu)
 % Created on:   2015-07-09 21:10:26
 % Last Modified: 2015-07-20 14:46:01
+% E.S. Added Reversibility (IE, Green to Red)
 
-if nargin == 0
-    n = 64;
+
+switch true
+    case nargin < 1
+        Reverse = false;
+        n = 64;
+    case nargin < 2
+        Reverse = false;
 end
 
 rgb = [255 255 229;...
@@ -29,3 +35,8 @@ nn = numel(rgb(:))/3;
 nn = linspace(0,1,nn);
 n  = linspace(0,1,n) ;
 cm = interp1(nn,rgb,n);
+
+if Reverse
+    cm = flip(cm);
+end
+

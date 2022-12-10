@@ -1,4 +1,4 @@
-function cm = red2blue(n)
+function cm = red2blue(n,Reverse)
 %RED2BLUE A Red to Blue Colormap from ColorBrewer
 %
 %   RED2BLUE(M) is a diverging red-to-blue colormap.
@@ -10,10 +10,13 @@ function cm = red2blue(n)
 % Created on:   2015-07-09 21:10:26
 % Last Modified: 2015-07-20 14:46:26
 
-if nargin == 0
-    n = 64;
+switch true
+    case nargin < 1
+        Reverse = false;
+        n = 64;
+    case nargin < 2
+        Reverse = false;
 end
-
 rgb = [103   0  31; ...
        178  24  43; ...
        214  96  77; ...
@@ -30,3 +33,7 @@ nn = numel(rgb(:))/3;
 nn = linspace(0,1,nn);
 n  = linspace(0,1,n) ;
 cm = interp1(nn,rgb,n);
+
+if Reverse
+    cm = flip(cm);
+end
